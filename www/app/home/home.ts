@@ -6,15 +6,12 @@ import {Page, Platform} from 'ionic-framework/ionic';
 export class HomePage {
   constructor(public platform: Platform) {
     this.platform.ready().then(() => {
-      console.log("Ready")
-      console.log(window.shake);
-      window.shake.startWatch(this.playBell);
-
+      if (window.shake) {
+        window.shake.startWatch(this.playBell);
+      } else {
+        console.warn("looks like you are trying to use a native plugin in the browser, which will not work. Try using this on device");
+      }
     });
-
-  }
-  error(err) {
-    console.log("err", err);
   }
   shame() {
     var shame = new Audio('audio/shame.mp3'); // buffers automatically when created
