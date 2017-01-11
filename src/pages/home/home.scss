@@ -1,14 +1,15 @@
 $blue: #385365 !default;
 $white: #f2efe2;
 
-.home-page {
+page-home {
   font-size: 35px;
   font-weight: bold;
   text-align: center;
 
-  ion-content {
-    background-color: $blue;
+  ion-content.content-md,
+  ion-content.content-ios {
     color: $white;
+    background-color: $blue;
 
     &[padding] {
       scroll-content {
@@ -19,8 +20,10 @@ $white: #f2efe2;
 
   .icon {
     display: block;
+
     margin: auto;
     padding-bottom: 30px;
+
     width: 100px;
   }
 
